@@ -1,7 +1,6 @@
 import "./style.scss";
 import logo from "../../assets/svg/Logo.svg";
 
-// No layout as 5 marcas usam o mesmo logo; num projeto real viriam de uma API
 const marcas = [
   { id: 1, nome: "Econverse", logo },
   { id: 2, nome: "Econverse", logo },
@@ -20,7 +19,11 @@ export function Brands() {
       <ul className="brands__lista">
         {marcas.map(({ id, nome, logo }) => (
           <li key={id}>
-            <a href="#" className="brands__item" aria-label={`Ver produtos da marca ${nome}`}>
+            <a
+              href="#"
+              className="brands__item"
+              aria-label={`Ver produtos da marca ${nome}`}
+            >
               <img src={logo} alt="" loading="lazy" />
             </a>
           </li>

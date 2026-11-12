@@ -8,7 +8,6 @@
   padding-bottom: 40px;
   font-family: "Poppins", sans-serif;
 
-  // celular: um card embaixo do outro
   @include mobile {
     flex-direction: column;
     gap: 16px;

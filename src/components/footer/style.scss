@@ -8,9 +8,8 @@
   background: var(--gray-100);
   min-height: 282px;
   display: flex;
-  gap: clamp(32px, 6.25vw, 90px); // 90px em 1440px (Figma)
+  gap: clamp(32px, 6.25vw, 90px); 
 
-  // tablet e celular: marca em cima, links embaixo
   @include tablet {
     flex-direction: column;
     gap: 32px;
@@ -18,8 +17,8 @@
 
   &__marca {
     width: 354px;
-    max-width: 100%; // no celular não passa da largura da tela
-    flex-shrink: 1; // em telas um pouco menores que o Figma, encolhe em vez de vazar
+    max-width: 100%; 
+    flex-shrink: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -63,12 +62,11 @@
   &__links {
     display: flex;
     align-items: center;
-    gap: clamp(32px, 7vw, 100px); // 100px em 1440px (Figma)
-    padding-left: clamp(32px, 6.25vw, 90px); // 90px em 1440px (Figma)
+    gap: clamp(32px, 7vw, 100px); 
+    padding-left: clamp(32px, 6.25vw, 90px); 
     min-height: 198px;
     border-left: 1px solid var(--divider);
 
-    // tablet: a linha vertical vira horizontal, em cima das colunas
     @include tablet {
       min-height: auto;
       padding-left: 0;
@@ -78,7 +76,6 @@
       gap: 64px;
     }
 
-    // celular: as 3 colunas quebram em linhas
     @include mobile {
       flex-wrap: wrap;
       align-items: flex-start;

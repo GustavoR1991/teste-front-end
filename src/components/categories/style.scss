@@ -2,16 +2,15 @@
 
 .categories {
   @include container;
-  padding-top: 35px; // 39 do Figma − 4 do padding da lista
-  padding-bottom: 24px; // 40 do Figma − 16 do padding da lista
+  padding-top: 35px; 
+  padding-bottom: 24px; 
 
   &__lista {
     display: flex;
-    // 42px no Figma; diminui até 16px quando a tela aperta (ex.: zoom de 125%)
     gap: clamp(16px, calc((100% - 896px) / 6), 42px);
-    padding: 4px 4px 16px; // espaço para a sombra dos quadrados não ser cortada
+    padding: 4px 4px 16px; 
     list-style: none;
-    overflow-x: auto; // se mesmo assim não couber, rola em vez de cortar
+    overflow-x: auto; 
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -22,7 +21,6 @@
       flex-shrink: 0;
     }
 
-    // centraliza quando cabe; quando não cabe, começa pelo 1º item (sem cortar "Tecnologia")
     > li:first-child {
       margin-left: auto;
     }
@@ -31,7 +29,6 @@
       margin-right: auto;
     }
 
-    // tablet e celular: faixa com rolagem e a borda direita esmaecida
     @include tablet {
       gap: 24px;
       @include scroll-x;
@@ -95,7 +92,6 @@
       object-fit: contain;
     }
 
-    // celular: quadrados menores
     @include mobile {
       width: 96px;
       height: 96px;

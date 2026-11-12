@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
-    padding: 0 70px; 
+    padding: 0 70px;
     font-weight: 600;
     font-size: 24px;
     color: var(--blue-500);
@@ -34,7 +34,7 @@
   &__abas {
     display: flex;
     height: 40px;
-    margin-top: 4px; 
+    margin-top: 4px;
     list-style: none;
 
     li {
@@ -45,7 +45,7 @@
       @include scroll-x;
 
       li {
-        flex: 1 0 auto; // cresce para preencher a largura; não encolhe (rola se não couber)
+        flex: 1 0 auto;
       }
     }
   }
@@ -81,13 +81,12 @@
   }
 
   &__carrossel {
-    position: relative; 
+    position: relative;
     margin-top: 24px;
   }
 
   &__lista {
     display: grid;
-    // 4 colunas de até 304px (Figma); encolhem se a tela for menor (ex.: zoom 125%)
     grid-template-columns: repeat(4, minmax(0, 304px));
     justify-content: space-between;
     column-gap: 16px;
@@ -95,7 +94,7 @@
     list-style: none;
 
     @include tablet {
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
 

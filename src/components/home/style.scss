@@ -10,7 +10,6 @@
   color: var(--white);
   font-family: "Poppins", sans-serif;
 
-  // celular: a altura acompanha o conteúdo, para o botão não sair da imagem
   @include mobile {
     height: auto;
     min-height: 320px;

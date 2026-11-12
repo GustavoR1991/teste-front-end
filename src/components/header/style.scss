@@ -35,13 +35,11 @@
       gap: 32px;
     }
 
-    // celular: os 3 benefícios viram uma faixa com rolagem lateral
     @include mobile {
       justify-content: flex-start;
       gap: 24px;
       @include scroll-x;
 
-      // centraliza quando cabe (iPad Mini); quando não cabe, começa pelo 1º item
       > li:first-child {
         margin-left: auto;
       }
@@ -59,7 +57,6 @@
     gap: 24px;
     padding: 12px 0;
 
-    // celular: logo e ícones em cima, busca embaixo ocupando a largura toda
     @include mobile {
       flex-wrap: wrap;
       gap: 12px;
@@ -77,7 +74,7 @@
 
     input {
       flex: 1;
-      min-width: 0; // deixa o input encolher dentro do flex
+      min-width: 0; 
       border: none;
       background: transparent;
       font-family: "Poppins", sans-serif;
@@ -92,14 +89,13 @@
       display: flex;
     }
 
-    // tablet: ocupa o espaço que sobra entre o logo e os ícones
     @include tablet {
       flex: 1;
       width: auto;
     }
 
     @include mobile {
-      order: 3; // vai para a segunda linha
+      order: 3; 
       flex-basis: 100%;
       height: 42px;
     }
@@ -143,7 +139,7 @@
       line-height: 100%;
       text-transform: uppercase;
       text-decoration: none;
-      white-space: nowrap; // "Todas categorias" e "Ofertas do dia" numa linha só
+      white-space: nowrap; 
       color: var(--gray-500);
 
       &.header__menu--destaque {
@@ -151,7 +147,7 @@
       }
     }
 
-    // tablet e celular: os itens viram uma faixa com rolagem lateral
+
     @include tablet {
       justify-content: flex-start;
       gap: 32px;

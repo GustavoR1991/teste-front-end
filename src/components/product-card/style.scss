@@ -14,7 +14,7 @@
   cursor: pointer;
 
   @include mobile {
-    height: auto; // no celular a altura acompanha o conteúdo
+    height: auto; 
     padding: 12px 10px;
   }
 

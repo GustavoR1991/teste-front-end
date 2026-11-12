@@ -7,11 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(32px, 8.6vw, 124px); // 124px em 1440px (Figma); diminui em telas menores
+  gap: clamp(32px, 8.6vw, 124px);
   background-color: var(--purple-900);
   color: var(--white);
 
-  // tablet e celular: texto em cima, formulário embaixo
   @include tablet {
     flex-direction: column;
     align-items: flex-start;
@@ -22,11 +21,11 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    flex: 0 1 515px; // 515px no Figma; o texto encolhe antes do formulário
+    flex: 0 1 515px; 
     min-width: 0;
 
     @include tablet {
-      flex: none; // em coluna, o "515px" viraria altura
+      flex: none; 
     }
   }
 
@@ -64,7 +63,6 @@
     display: flex;
     gap: 8px;
 
-    // celular: cada campo e o botão numa linha
     @include mobile {
       flex-direction: column;
     }
@@ -85,14 +83,12 @@
       color: var(--gray-700);
     }
 
-    // tablet: os 2 campos dividem o espaço que sobra ao lado do botão
     @include tablet {
       flex: 1;
       width: auto;
       min-width: 0;
     }
 
-    // celular: largura toda (e "flex: none" para manter os 42px de altura na coluna)
     @include mobile {
       flex: none;
       width: 100%;

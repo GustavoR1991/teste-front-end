@@ -13,7 +13,6 @@ import crown from "../../assets/svg/CrownSimple.svg";
 export function Header() {
   return (
     <header className="header">
-      {/* 1. Barra de benefícios */}
       <ul className="header__beneficios">
         <li>
           <img src={shield} alt="" />
@@ -35,7 +34,6 @@ export function Header() {
         </li>
       </ul>
 
-      {/* 2. Logo, busca e ícones */}
       <div className="header__principal">
         <a href="/" className="header__logo">
           <img src={logo} alt="Econverse - página inicial" />
@@ -80,7 +78,6 @@ export function Header() {
         </ul>
       </div>
 
-      {/* 3. Menu de categorias */}
       <nav className="header__menu" aria-label="Categorias">
         <ul>
           <li>

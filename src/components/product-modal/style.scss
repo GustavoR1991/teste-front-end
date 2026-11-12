@@ -2,7 +2,7 @@
 
 .modal {
   margin: auto;
-  max-width: calc(100vw - 32px); // nunca passa da tela (16px de folga de cada lado)
+  max-width: calc(100vw - 32px); 
   padding: 0;
   border: 1px solid var(--gray-600);
   border-radius: 4px;
@@ -17,13 +17,12 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: clamp(24px, 6vw, 87px); // 87px no Figma
+    gap: clamp(24px, 6vw, 87px); 
     width: 769px;
     max-width: 100%;
     min-height: 299px;
     padding: 37px 51px 37px 56px;
 
-    // celular: foto em cima, informações embaixo
     @include mobile {
       flex-direction: column;
       gap: 20px;
@@ -150,7 +149,7 @@
     min-width: 0;
 
     @include mobile {
-      flex: 1; // ocupa o resto da linha ao lado do contador
+      flex: 1; 
     }
     height: 36px;
     border: none;
