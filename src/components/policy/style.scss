@@ -1,8 +1,8 @@
 
 .policy {
-  background: var(--background-color);
+  background: var(--white);
   width: 100%;
-  padding: 13px 16px; // 13px em cima e embaixo, 16px nas laterais (para o celular)
+  padding: 13px 16px; 
 
   &__text {
     font-family: "Poppins", sans-serif;

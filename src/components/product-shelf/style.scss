@@ -1,0 +1,138 @@
+@use "../../styles/mixins" as *;
+
+.shelf {
+  @include container;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: "Poppins", sans-serif;
+
+  &__titulo {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 70px; 
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--blue-500);
+    white-space: nowrap;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gray-300);
+    }
+
+    @include mobile {
+      gap: 12px;
+      padding: 0;
+      font-size: 20px;
+    }
+  }
+
+  &__abas {
+    display: flex;
+    height: 40px;
+    margin-top: 4px; 
+    list-style: none;
+
+    li {
+      flex: 1;
+    }
+
+    @include mobile {
+      @include scroll-x;
+
+      li {
+        flex: 1 0 auto; // cresce para preencher a largura; não encolhe (rola se não couber)
+      }
+    }
+  }
+
+  &__aba {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gray-300);
+    background: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--black);
+    cursor: pointer;
+
+    &--ativa {
+      font-weight: 700;
+      color: var(--blue-500);
+    }
+
+    @include mobile {
+      padding: 0 16px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+
+  &__ver-todos {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: var(--black);
+  }
+
+  &__carrossel {
+    position: relative; 
+    margin-top: 24px;
+  }
+
+  &__lista {
+    display: grid;
+    // 4 colunas de até 304px (Figma); encolhem se a tela for menor (ex.: zoom 125%)
+    grid-template-columns: repeat(4, minmax(0, 304px));
+    justify-content: space-between;
+    column-gap: 16px;
+    padding: 12px 0;
+    list-style: none;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 16px;
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 20px;
+    cursor: pointer;
+
+    &--esquerda {
+      left: -42px;
+    }
+    &--direita {
+      right: -42px;
+    }
+
+    @include tablet {
+      z-index: 1;
+
+      &--esquerda {
+        left: -12px;
+      }
+      &--direita {
+        right: -12px;
+      }
+    }
+  }
+}

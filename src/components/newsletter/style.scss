@@ -7,62 +7,95 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--newsletter-background);
-  color: var(--text-color-white);
-  gap: 124px;
+  gap: clamp(32px, 8.6vw, 124px); // 124px em 1440px (Figma); diminui em telas menores
+  background-color: var(--purple-900);
+  color: var(--white);
+
+  // tablet e celular: texto em cima, formulário embaixo
+  @include tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
 
   &__texto {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 0 1 515px; // 515px no Figma; o texto encolhe antes do formulário
+    min-width: 0;
+
+    @include tablet {
+      flex: none; // em coluna, o "515px" viraria altura
+    }
   }
 
   &__titulo {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 120%;
-    font-weight: 600;
-    font-style: semibold;
     font-size: 32px;
-    letter-spacing: 0px;
-    vertical-align: middle;
+    line-height: 120%;
+
+    @include mobile {
+      font-size: 24px;
+    }
   }
 
   &__descricao {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 14px;
-    font-style: light;
     line-height: 18px;
     opacity: 0.8;
-    letter-spacing: 0px;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex-shrink: 0;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__campos {
     display: flex;
     gap: 8px;
+
+    // celular: cada campo e o botão numa linha
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__input {
     width: 233px;
     height: 42px;
     padding: 12px 24px;
-    border: 1px solid #e7e7e7;
+    border: 1px solid var(--gray-200);
     border-radius: 8px;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     line-height: 18px;
-    color: #222;
+    color: var(--gray-900);
 
     &::placeholder {
-      color: #676767;
+      color: var(--gray-700);
+    }
+
+    // tablet: os 2 campos dividem o espaço que sobra ao lado do botão
+    @include tablet {
+      flex: 1;
+      width: auto;
+      min-width: 0;
+    }
+
+    // celular: largura toda (e "flex: none" para manter os 42px de altura na coluna)
+    @include mobile {
+      flex: none;
+      width: 100%;
     }
   }
 
@@ -75,8 +108,12 @@
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 14px;
-    color: #161615;
+    color: var(--gray-950);
     cursor: pointer;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__termos {

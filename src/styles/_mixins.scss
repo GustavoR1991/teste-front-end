@@ -1,5 +1,46 @@
+$tablet: 1024px;
+$mobile: 768px;
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
 @mixin container {
   width: 100%;
   padding-left: max(80px, calc((100% - 1280px) / 2));
   padding-right: max(80px, calc((100% - 1280px) / 2));
+
+  @include tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include mobile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@mixin scroll-x {
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  mask-image: linear-gradient(90deg, #000 80%, transparent);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > * {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
 }

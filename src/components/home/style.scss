@@ -1,0 +1,88 @@
+@use "../../styles/mixins" as *;
+
+.banner {
+  @include container;
+  height: 390px;
+  padding-top: 78px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%),
+    url("/images/black-friday-november.jpg") center / cover no-repeat;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+
+  // celular: a altura acompanha o conteúdo, para o botão não sair da imagem
+  @include mobile {
+    height: auto;
+    min-height: 320px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &__conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__titulo {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 50px;
+
+    @include mobile {
+      font-size: 32px;
+      line-height: 36px;
+    }
+  }
+
+  &__subtitulo {
+    margin-top: 18px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+
+    @include mobile {
+      margin-top: 12px;
+      font-size: 22px;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--yellow-500);
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 206px;
+    height: 50px;
+    margin-top: 41px;
+    border-radius: 5px;
+    background: var(--yellow-500);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--purple-900);
+    text-decoration: none;
+    transition: filter 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      filter: brightness(0.92);
+    }
+
+    @include mobile {
+      margin-top: 24px;
+      width: 180px;
+      height: 44px;
+    }
+  }
+}
+
+.home__status {
+  padding: 40px 16px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: var(--gray-500);
+}

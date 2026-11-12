@@ -10,14 +10,15 @@
     gap: 119px;
     padding: 6px 0;
     list-style: none;
-    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 1px solid var(--gray-100);
 
     li {
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 12px;
-      color: var(--gray-100);
+      color: var(--gray-500);
+      white-space: nowrap; 
     }
 
     img {
@@ -29,13 +30,40 @@
       font-weight: 600;
       color: var(--purple-700);
     }
+
+    @include tablet {
+      gap: 32px;
+    }
+
+    // celular: os 3 benefícios viram uma faixa com rolagem lateral
+    @include mobile {
+      justify-content: flex-start;
+      gap: 24px;
+      @include scroll-x;
+
+      // centraliza quando cabe (iPad Mini); quando não cabe, começa pelo 1º item
+      > li:first-child {
+        margin-left: auto;
+      }
+
+      > li:last-child {
+        margin-right: auto;
+      }
+    }
   }
 
   &__principal {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
     padding: 12px 0;
+
+    // celular: logo e ícones em cima, busca embaixo ocupando a largura toda
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
   }
 
   &__busca {
@@ -45,10 +73,11 @@
     height: 48px;
     padding: 0 16px;
     border-radius: 10px;
-    background: #f6f5f2;
+    background: var(--gray-50);
 
     input {
       flex: 1;
+      min-width: 0; // deixa o input encolher dentro do flex
       border: none;
       background: transparent;
       font-family: "Poppins", sans-serif;
@@ -61,6 +90,18 @@
       background: none;
       cursor: pointer;
       display: flex;
+    }
+
+    // tablet: ocupa o espaço que sobra entre o logo e os ícones
+    @include tablet {
+      flex: 1;
+      width: auto;
+    }
+
+    @include mobile {
+      order: 3; // vai para a segunda linha
+      flex-basis: 100%;
+      height: 42px;
     }
   }
 
@@ -76,31 +117,55 @@
       width: 32px;
       height: 32px;
     }
+
+    @include mobile {
+      gap: 8px;
+    }
   }
 
   &__menu ul {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 12px 52px;
+    height: 40px;
+    padding: 0 52px;
     list-style: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    font-weight: 600;
-    line-height: 100%;
-    text-transform: uppercase;
+    background: var(--white);
+    border-top: 1px solid var(--gray-150);
+    box-shadow: 0 8px 16px rgba(57, 48, 19, 0.12);
 
     a {
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 14px;
+      font-weight: 600;
+      line-height: 100%;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--gray-100);
-    }
-  }
+      white-space: nowrap; // "Todas categorias" e "Ofertas do dia" numa linha só
+      color: var(--gray-500);
 
-  &__menu--destaque {
-    color: var(--purple-700) !important;
+      &.header__menu--destaque {
+        color: var(--purple-700);
+      }
+    }
+
+    // tablet e celular: os itens viram uma faixa com rolagem lateral
+    @include tablet {
+      justify-content: flex-start;
+      gap: 32px;
+      padding: 0 16px;
+      @include scroll-x;
+    }
+
+    @include mobile {
+      gap: 24px;
+
+      a {
+        font-size: 12px;
+      }
+    }
   }
 
   &__logo {
@@ -110,11 +175,10 @@
       display: block;
       width: 139px;
       height: auto;
+
+      @include mobile {
+        width: 110px;
+      }
     }
   }
-}
-
-.header__logo img {
-  width: 139px;
-  height: auto;
 }

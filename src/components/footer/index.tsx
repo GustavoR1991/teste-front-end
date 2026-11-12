@@ -41,7 +41,6 @@ export function Footer() {
           </nav>
         </section>
 
-        <div className="border" />
         <nav className="footer__links" aria-label="Links do rodapé">
           <div className="footer__coluna">
             <h2 className="footer__titulo">Institucional</h2>

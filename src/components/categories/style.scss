@@ -1,0 +1,109 @@
+@use "../../styles/mixins" as *;
+
+.categories {
+  @include container;
+  padding-top: 35px; // 39 do Figma − 4 do padding da lista
+  padding-bottom: 24px; // 40 do Figma − 16 do padding da lista
+
+  &__lista {
+    display: flex;
+    // 42px no Figma; diminui até 16px quando a tela aperta (ex.: zoom de 125%)
+    gap: clamp(16px, calc((100% - 896px) / 6), 42px);
+    padding: 4px 4px 16px; // espaço para a sombra dos quadrados não ser cortada
+    list-style: none;
+    overflow-x: auto; // se mesmo assim não couber, rola em vez de cortar
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > li {
+      flex-shrink: 0;
+    }
+
+    // centraliza quando cabe; quando não cabe, começa pelo 1º item (sem cortar "Tecnologia")
+    > li:first-child {
+      margin-left: auto;
+    }
+
+    > li:last-child {
+      margin-right: auto;
+    }
+
+    // tablet e celular: faixa com rolagem e a borda direita esmaecida
+    @include tablet {
+      gap: 24px;
+      @include scroll-x;
+    }
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 128px;
+    white-space: nowrap;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--black);
+    text-decoration: none;
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    @include mobile {
+      width: 96px;
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    &--ativo {
+      color: var(--purple-700);
+      font-weight: 600;
+
+      .categories__icone {
+        background: var(--white); 
+      }
+    }
+  }
+
+  &__icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 10px;
+    background: var(--gray-100);
+    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.13);
+    transition: background 0.2s;
+
+    img {
+      width: 61px;
+      height: 61px;
+      object-fit: contain;
+    }
+
+    // celular: quadrados menores
+    @include mobile {
+      width: 96px;
+      height: 96px;
+
+      img {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  }
+}

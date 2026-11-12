@@ -1,0 +1,116 @@
+@use "../../styles/mixins" as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  padding: 16px 14px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 3px 19px rgba(0, 0, 0, 0.22);
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+  cursor: pointer;
+
+  @include mobile {
+    height: auto; // no celular a altura acompanha o conteúdo
+    padding: 12px 10px;
+  }
+
+  &__foto {
+    width: 100%;
+    height: 237px;
+    object-fit: contain;
+
+    @include mobile {
+      height: 140px;
+    }
+  }
+
+  &__descricao {
+    margin-top: 16px; 
+    height: 46px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 23px;
+    overflow: hidden;
+
+    @include mobile {
+      height: 36px;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  &__precos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; 
+    margin-top: 12px; 
+  }
+
+  &__preco-antigo {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--gray-500);
+  
+  }
+
+  &__preco {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    @include mobile {
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+
+  &__parcelas {
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 18px;
+
+    @include mobile {
+      font-size: 10px;
+    }
+  }
+
+  &__frete {
+    margin-top: 7px; 
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--blue-500);
+  }
+
+  &__comprar {
+    margin-top: auto; 
+    width: 100%;
+    height: 44px;
+    border: none;
+    border-radius: 4px;
+    background: var(--blue-500);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--white);
+    cursor: pointer;
+
+    @include mobile {
+      margin-top: 12px;
+      height: 38px;
+      font-size: 12px;
+    }
+    transition: filter 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      filter: brightness(1.15);
+    }
+  }
+}

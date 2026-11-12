@@ -2,15 +2,25 @@
 
 .footer {
   @include container;
+
   padding-top: 42px;
   padding-bottom: 42px;
-  background: var(--background-footer);
+  background: var(--gray-100);
   min-height: 282px;
   display: flex;
-  gap: 90px;
+  gap: clamp(32px, 6.25vw, 90px); // 90px em 1440px (Figma)
+
+  // tablet e celular: marca em cima, links embaixo
+  @include tablet {
+    flex-direction: column;
+    gap: 32px;
+  }
 
   &__marca {
     width: 354px;
+    max-width: 100%; // no celular não passa da largura da tela
+    flex-shrink: 1; // em telas um pouco menores que o Figma, encolhe em vez de vazar
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 27px;
@@ -25,7 +35,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     line-height: 150%;
-    color: var(--text-color-secondary);
+    color: var(--black);
   }
 
   &__redes {
@@ -53,9 +63,27 @@
   &__links {
     display: flex;
     align-items: center;
-    gap: 100px;
-    padding-left: 90px;
+    gap: clamp(32px, 7vw, 100px); // 100px em 1440px (Figma)
+    padding-left: clamp(32px, 6.25vw, 90px); // 90px em 1440px (Figma)
     min-height: 198px;
+    border-left: 1px solid var(--divider);
+
+    // tablet: a linha vertical vira horizontal, em cima das colunas
+    @include tablet {
+      min-height: auto;
+      padding-left: 0;
+      padding-top: 32px;
+      border-left: none;
+      border-top: 1px solid var(--divider);
+      gap: 64px;
+    }
+
+    // celular: as 3 colunas quebram em linhas
+    @include mobile {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 32px 48px;
+    }
   }
 
   &__coluna {
@@ -76,8 +104,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 16px;
-    color: #222222b5;
-    font-weight: bold;
+    color: var(--text-muted);
   }
 
   &__coluna a {
@@ -85,7 +112,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    color: #222222b5;
+    color: var(--text-muted);
 
     text-decoration: none;
 
@@ -94,8 +121,4 @@
       text-decoration: underline;
     }
   }
-}
-
-.border {
-  border: 1px solid #2828282e;
 }

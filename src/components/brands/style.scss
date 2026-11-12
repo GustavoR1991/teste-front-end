@@ -1,0 +1,95 @@
+@use "../../styles/mixins" as *;
+
+.brands {
+  @include container;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: "Poppins", sans-serif;
+
+  &__titulo {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--blue-500); // #3442B5
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  &__lista {
+    display: flex;
+    // ~43px no Figma; diminui até 16px quando a tela aperta
+    gap: clamp(16px, calc((100% - 1055px) / 4), 43px);
+    margin-top: 32px;
+    padding: 8px 8px 28px; // espaço para a sombra dos círculos não ser cortada
+    list-style: none;
+    overflow-x: auto; // se não couber, rola em vez de cortar
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // desktop: até 211px (Figma); encolhem um pouco em telas menores antes de precisar rolar
+    > li {
+      flex: 0 1 211px;
+      min-width: 0;
+    }
+
+    // centraliza quando cabe; quando não cabe, começa pela 1ª marca
+    > li:first-child {
+      margin-left: auto;
+    }
+
+    > li:last-child {
+      margin-right: auto;
+    }
+
+    // tablet e celular: faixa com rolagem e a borda direita esmaecida
+    @include tablet {
+      @include scroll-x;
+
+      > li {
+        flex: none; // tamanho fixo do círculo; o que não cabe, rola
+      }
+    }
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; // largura do <li> (até 211px)
+    aspect-ratio: 1; // altura = largura → sempre um círculo perfeito
+    border-radius: 50%; // círculo (105.5px no Figma = metade de 211)
+    background: var(--white);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.13); // #00000021
+    transition: transform 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-4px);
+    }
+
+    img {
+      width: 55%; // 117px de 211px (Figma); acompanha o tamanho do círculo
+      height: auto; // 34.76px no Figma, pela proporção do SVG
+    }
+
+    // tablet: círculos um pouco menores
+    @include tablet {
+      width: 168px;
+    }
+
+    // celular: cabem ~2,5 círculos, indicando que dá para arrastar
+    @include mobile {
+      width: 132px;
+    }
+  }
+}

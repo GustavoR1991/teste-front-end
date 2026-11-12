@@ -1,0 +1,167 @@
+@use "../../styles/mixins" as *;
+
+.modal {
+  margin: auto;
+  max-width: calc(100vw - 32px); // nunca passa da tela (16px de folga de cada lado)
+  padding: 0;
+  border: 1px solid var(--gray-600);
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &__conteudo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 6vw, 87px); // 87px no Figma
+    width: 769px;
+    max-width: 100%;
+    min-height: 299px;
+    padding: 37px 51px 37px 56px;
+
+    // celular: foto em cima, informações embaixo
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+      padding: 48px 20px 24px;
+    }
+  }
+
+  &__fechar {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__fechar-espelho {
+    transform: scaleX(-1);
+  }
+
+  &__foto {
+    width: 247px;
+    height: 192px;
+    object-fit: contain;
+    flex-shrink: 1;
+    min-width: 0;
+
+    @include mobile {
+      width: 200px;
+      height: 156px;
+    }
+  }
+
+  &__info {
+    width: 328px;
+    min-width: 0;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__titulo {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__preco {
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+  }
+
+  &__descricao {
+    width: 290px;
+    max-width: 100%;
+    margin-top: 32px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+  }
+
+  &__detalhes {
+    display: block;
+    margin-top: 6px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+
+  &__acoes {
+    display: flex;
+    gap: 13px; 
+    margin-top: 32px; 
+  }
+
+  &__contador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 109px;
+    height: 36px;
+    padding: 0 9px;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    font-size: 16px;
+
+    button {
+      display: flex;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__comprar {
+    width: 188px;
+    min-width: 0;
+
+    @include mobile {
+      flex: 1; // ocupa o resto da linha ao lado do contador
+    }
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    background: var(--yellow-500);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--purple-900);
+    cursor: pointer;
+  }
+}
