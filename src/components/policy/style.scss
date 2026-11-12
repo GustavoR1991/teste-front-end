@@ -1,0 +1,14 @@
+
+.policy {
+  background: var(--background-color);
+  width: 100%;
+  padding: 13px 16px; // 13px em cima e embaixo, 16px nas laterais (para o celular)
+
+  &__text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--black);
+    text-align: center;
+  }
+}

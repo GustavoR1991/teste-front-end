@@ -1,0 +1,120 @@
+@use "../../styles/mixins" as *;
+
+.header {
+  @include container;
+  font-family: "Poppins", sans-serif;
+
+  &__beneficios {
+    display: flex;
+    justify-content: center;
+    gap: 119px;
+    padding: 6px 0;
+    list-style: none;
+    border-bottom: 1px solid #f4f4f4;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--gray-100);
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--purple-700);
+    }
+  }
+
+  &__principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+  }
+
+  &__busca {
+    display: flex;
+    align-items: center;
+    width: 630px;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 10px;
+    background: #f6f5f2;
+
+    input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      outline: none;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: flex;
+    }
+  }
+
+  &__acoes {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__menu ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 52px;
+    list-style: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    line-height: 100%;
+    text-transform: uppercase;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--gray-100);
+    }
+  }
+
+  &__menu--destaque {
+    color: var(--purple-700) !important;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 139px;
+      height: auto;
+    }
+  }
+}
+
+.header__logo img {
+  width: 139px;
+  height: auto;
+}

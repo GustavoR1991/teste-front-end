@@ -1,0 +1,101 @@
+@use "../../styles/mixins" as *;
+
+.footer {
+  @include container;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  background: var(--background-footer);
+  min-height: 282px;
+  display: flex;
+  gap: 90px;
+
+  &__marca {
+    width: 354px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+  }
+
+  &__logo {
+    width: 164px;
+    height: 48px;
+  }
+
+  &__descricao {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--text-color-secondary);
+  }
+
+  &__redes {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+
+    a {
+      display: block;
+      transition: opacity 0.2s;
+
+      &:hover,
+      &:focus-visible {
+        opacity: 0.7;
+      }
+    }
+
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding-left: 90px;
+    min-height: 198px;
+  }
+
+  &__coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__titulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222b5;
+    font-weight: bold;
+  }
+
+  &__coluna a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #222222b5;
+
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+}
+
+.border {
+  border: 1px solid #2828282e;
+}

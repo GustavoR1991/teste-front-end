@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--background-color);
+}
+
+:root {
+  --background-color: #ffffff;
+  --gray-050: #dedede;
+  --gray-100: #9f9f9f;
+  --black: #3f3f40;
+  --yellow-500: #f7ca11;
+  --purple-700: #3019b2;
+  --blue-500: #3442b5;
+  --newsletter-background: #271c47;
+  --background-footer: #f4f4f4;
+  --text-color-primary: #271c47;
+  --text-color-secondary: #3f3f40;
+  --text-color-white: #ffffff;
+}

@@ -1,0 +1,5 @@
+@mixin container {
+  width: 100%;
+  padding-left: max(80px, calc((100% - 1280px) / 2));
+  padding-right: max(80px, calc((100% - 1280px) / 2));
+}
