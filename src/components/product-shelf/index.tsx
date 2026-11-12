@@ -3,7 +3,7 @@ import type { Product } from "../../types/product";
 import { ProductCard } from "../product-card";
 import "./style.scss";
 
-const ABAS = [
+const TABS = [
   "Celular",
   "Acessórios",
   "Tablets",
@@ -11,72 +11,72 @@ const ABAS = [
   "TVs",
   "Ver todos",
 ];
-const POR_PAGINA = 4;
+const PER_PAGE = 4;
 
 interface ProductShelfProps {
   id?: string;
-  titulo: string;
+  title: string;
   products: Product[];
   onSelect: (product: Product) => void;
-  mostrarAbas?: boolean;
+  showTabs?: boolean;
 }
 
 export function ProductShelf({
   id,
-  titulo,
+  title,
   products,
   onSelect,
-  mostrarAbas = false,
+  showTabs = false,
 }: ProductShelfProps) {
-  const [abaAtiva, setAbaAtiva] = useState(ABAS[0]);
-  const [pagina, setPagina] = useState(0);
+  const [activeTab, setActiveTab] = useState(TABS[0]);
+  const [page, setPage] = useState(0);
 
-  const totalPaginas = Math.ceil(products.length / POR_PAGINA);
-  const visiveis = products.slice(
-    pagina * POR_PAGINA,
-    pagina * POR_PAGINA + POR_PAGINA,
+  const totalPages = Math.ceil(products.length / PER_PAGE);
+  const visibleProducts = products.slice(
+    page * PER_PAGE,
+    page * PER_PAGE + PER_PAGE,
   );
 
-  const anterior = () => setPagina((p) => (p === 0 ? totalPaginas - 1 : p - 1));
-  const proxima = () => setPagina((p) => (p === totalPaginas - 1 ? 0 : p + 1));
+  const previous = () => setPage((p) => (p === 0 ? totalPages - 1 : p - 1));
+  const next = () => setPage((p) => (p === totalPages - 1 ? 0 : p + 1));
 
   return (
     <section className="shelf" id={id}>
-      <h2 className="shelf__titulo">{titulo}</h2>
+      <h2 className="shelf__title">{title}</h2>
 
-      {mostrarAbas ? (
-        <ul className="shelf__abas">
-          {ABAS.map((aba) => (
-            <li key={aba}>
+      {showTabs ? (
+        <ul className="shelf__tabs">
+          {TABS.map((tab) => (
+            <li key={tab}>
               <button
                 type="button"
-                className={`shelf__aba ${abaAtiva === aba ? "shelf__aba--ativa" : ""}`}
-                aria-pressed={abaAtiva === aba}
-                onClick={() => setAbaAtiva(aba)}
+                className={`shelf__tab ${activeTab === tab ? "shelf__tab--active" : ""}`}
+                aria-pressed={activeTab === tab}
+                onClick={() => setActiveTab(tab)}
               >
-                {aba}
+                {tab}
               </button>
             </li>
           ))}
         </ul>
       ) : (
-        <a href="#" className="shelf__ver-todos">
+        <a href="#" className="shelf__see-all">
           Ver todos
         </a>
       )}
 
-      <div className="shelf__carrossel">
+      <div className="shelf__carousel">
         <button
           type="button"
-          className="shelf__seta shelf__seta--esquerda"
-          onClick={anterior}
+          className="shelf__arrow shelf__arrow--left"
+          onClick={previous}
           aria-label="Produtos anteriores"
         >
           ‹
         </button>
 
-        <ul className="shelf__lista">
-          {visiveis.map((product) => (
+        <ul className="shelf__list">
+          {visibleProducts.map((product) => (
             <li key={product.productName}>
               <ProductCard product={product} onSelect={onSelect} />
             </li>
@@ -85,8 +85,8 @@ export function ProductShelf({
 
         <button
           type="button"
-          className="shelf__seta shelf__seta--direita"
-          onClick={proxima}
+          className="shelf__arrow shelf__arrow--right"
+          onClick={next}
           aria-label="Próximos produtos"
         >
           ›

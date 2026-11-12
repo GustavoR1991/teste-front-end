@@ -18,7 +18,7 @@
     padding: 12px 10px;
   }
 
-  &__foto {
+  &__photo {
     width: 100%;
     height: 237px;
     object-fit: contain;
@@ -28,7 +28,7 @@
     }
   }
 
-  &__descricao {
+  &__description {
     margin-top: 16px; 
     height: 46px;
     font-weight: 300;
@@ -43,14 +43,14 @@
     }
   }
 
-  &__precos {
+  &__prices {
     display: flex;
     flex-direction: column;
     gap: 2px; 
     margin-top: 12px; 
   }
 
-  &__preco-antigo {
+  &__old-price {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -58,7 +58,7 @@
   
   }
 
-  &__preco {
+  &__price {
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
@@ -69,7 +69,7 @@
     }
   }
 
-  &__parcelas {
+  &__installments {
     margin-top: 2px;
     font-size: 12px;
     line-height: 18px;
@@ -79,14 +79,14 @@
     }
   }
 
-  &__frete {
+  &__shipping {
     margin-top: 7px; 
     font-size: 12px;
     line-height: 18px;
     color: var(--blue-500);
   }
 
-  &__comprar {
+  &__buy {
     margin-top: auto; 
     width: 100%;
     height: 44px;

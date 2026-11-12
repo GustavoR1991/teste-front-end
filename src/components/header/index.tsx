@@ -13,7 +13,7 @@ import crown from "../../assets/svg/CrownSimple.svg";
 export function Header() {
   return (
     <header className="header">
-      <ul className="header__beneficios">
+      <ul className="header__benefits">
         <li>
           <img src={shield} alt="" />
           <span>
@@ -34,18 +34,18 @@ export function Header() {
         </li>
       </ul>
 
-      <div className="header__principal">
+      <div className="header__main">
         <a href="/" className="header__logo">
           <img src={logo} alt="Econverse - página inicial" />
         </a>
 
         <form
-          className="header__busca"
+          className="header__search"
           role="search"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
-            id="busca"
+            id="search"
             type="search"
             placeholder="O que você está buscando?"
           />
@@ -54,7 +54,7 @@ export function Header() {
           </button>
         </form>
 
-        <ul className="header__acoes">
+        <ul className="header__actions">
           <li>
             <a href="#" aria-label="Meus pedidos">
               <img src={group} alt="" />
@@ -96,7 +96,7 @@ export function Header() {
             <a href="#">Lançamentos</a>
           </li>
           <li>
-            <a href="#" className="header__menu--destaque">
+            <a href="#" className="header__menu--highlight">
               Ofertas do dia
             </a>
           </li>

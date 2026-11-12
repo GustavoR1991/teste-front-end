@@ -37,7 +37,7 @@
     }
   }
 
-  &__botao {
+  &__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -53,18 +53,18 @@
     color: var(--black);
   }
 
-  &__titulo {
+  &__title {
     font-weight: 700;
     font-size: 40px;
   }
 
-  &__texto {
+  &__text {
     max-width: 280px;
     margin-top: 8px;
     font-size: 16px;
   }
 
-  &__botao {
+  &__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;

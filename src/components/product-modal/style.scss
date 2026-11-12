@@ -13,7 +13,7 @@
     background: rgba(0, 0, 0, 0.6);
   }
 
-  &__conteudo {
+  &__content {
     position: relative;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@
     }
   }
 
-  &__fechar {
+  &__close {
     position: absolute;
     top: 16px;
     right: 20px;
@@ -48,11 +48,11 @@
     }
   }
 
-  &__fechar-espelho {
+  &__close-mirror {
     transform: scaleX(-1);
   }
 
-  &__foto {
+  &__photo {
     width: 247px;
     height: 192px;
     object-fit: contain;
@@ -74,7 +74,7 @@
     }
   }
 
-  &__titulo {
+  &__title {
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;
@@ -82,7 +82,7 @@
     text-transform: uppercase;
   }
 
-  &__preco {
+  &__price {
     margin-top: 12px;
     font-weight: 600;
     font-size: 20px;
@@ -90,7 +90,7 @@
     letter-spacing: 0.05em;
   }
 
-  &__descricao {
+  &__description {
     width: 290px;
     max-width: 100%;
     margin-top: 32px;
@@ -102,7 +102,7 @@
     color: var(--gray-500);
   }
 
-  &__detalhes {
+  &__details {
     display: block;
     margin-top: 6px;
     font-family: "Work Sans", sans-serif;
@@ -114,13 +114,13 @@
     text-decoration: none;
   }
 
-  &__acoes {
+  &__actions {
     display: flex;
     gap: 13px; 
     margin-top: 32px; 
   }
 
-  &__contador {
+  &__counter {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -144,7 +144,7 @@
     }
   }
 
-  &__comprar {
+  &__buy {
     width: 188px;
     min-width: 0;
 

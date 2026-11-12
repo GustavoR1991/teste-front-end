@@ -1,30 +1,30 @@
 import "./style.scss";
 
-const categorias = [
-  { nome: "Tecnologia", icone: "/images/tecnologiaIcon.png", ativo: true },
-  { nome: "Supermercado", icone: "/images/supermercados.png" },
-  { nome: "Bebidas", icone: "/images/whiskey.png" },
-  { nome: "Ferramentas", icone: "/images/ferramentas.png" },
-  { nome: "Saúde", icone: "/images/cuidados-de-saude.png" },
-  { nome: "Esportes e Fitness", icone: "/images/corrida.png" },
-  { nome: "Moda", icone: "/images/moda.png" },
+const categories = [
+  { name: "Tecnologia", icon: "/images/tecnologiaIcon.png", active: true },
+  { name: "Supermercado", icon: "/images/supermercados.png" },
+  { name: "Bebidas", icon: "/images/whiskey.png" },
+  { name: "Ferramentas", icon: "/images/ferramentas.png" },
+  { name: "Saúde", icon: "/images/cuidados-de-saude.png" },
+  { name: "Esportes e Fitness", icon: "/images/corrida.png" },
+  { name: "Moda", icon: "/images/moda.png" },
 ];
 
 export function Categories() {
   return (
     <nav className="categories" aria-label="Categorias de produtos">
-      <ul className="categories__lista">
-        {categorias.map(({ nome, icone, ativo }) => (
-          <li key={nome}>
+      <ul className="categories__list">
+        {categories.map(({ name, icon, active }) => (
+          <li key={name}>
             <a
               href="#"
-              className={`categories__item ${ativo ? "categories__item--ativo" : ""}`}
-              aria-current={ativo ? "page" : undefined}
+              className={`categories__item ${active ? "categories__item--active" : ""}`}
+              aria-current={active ? "page" : undefined}
             >
-              <span className="categories__icone">
-                <img src={icone} alt="" />
+              <span className="categories__icon">
+                <img src={icon} alt="" />
               </span>
-              {nome}
+              {name}
             </a>
           </li>
         ))}

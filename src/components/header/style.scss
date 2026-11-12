@@ -4,7 +4,7 @@
   @include container;
   font-family: "Poppins", sans-serif;
 
-  &__beneficios {
+  &__benefits {
     display: flex;
     justify-content: center;
     gap: 119px;
@@ -50,7 +50,7 @@
     }
   }
 
-  &__principal {
+  &__main {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,7 +63,7 @@
     }
   }
 
-  &__busca {
+  &__search {
     display: flex;
     align-items: center;
     width: 630px;
@@ -101,7 +101,7 @@
     }
   }
 
-  &__acoes {
+  &__actions {
     display: flex;
     gap: 24px;
     list-style: none;
@@ -142,7 +142,7 @@
       white-space: nowrap; 
       color: var(--gray-500);
 
-      &.header__menu--destaque {
+      &.header__menu--highlight {
         color: var(--purple-700);
       }
     }

@@ -13,27 +13,27 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
   return (
     <article className="product-card" onClick={() => onSelect(product)}>
       <img
-        className="product-card__foto"
+        className="product-card__photo"
         src={photo}
         alt={productName}
         loading="lazy"
       />
 
-      <h3 className="product-card__descricao">{descriptionShort}</h3>
+      <h3 className="product-card__description">{descriptionShort}</h3>
 
-      <div className="product-card__precos">
-        <s className="product-card__preco-antigo">{formatPrice(price * 1.1)}</s>
-        <strong className="product-card__preco">{formatPrice(price)}</strong>
+      <div className="product-card__prices">
+        <s className="product-card__old-price">{formatPrice(price * 1.1)}</s>
+        <strong className="product-card__price">{formatPrice(price)}</strong>
       </div>
 
-      <p className="product-card__parcelas">
+      <p className="product-card__installments">
         ou 2x de {formatPrice(price / 2)} sem juros
       </p>
-      <p className="product-card__frete">Frete grátis</p>
+      <p className="product-card__shipping">Frete grátis</p>
 
       <button
         type="button"
-        className="product-card__comprar"
+        className="product-card__buy"
         onClick={(e) => {
           e.stopPropagation();
           onSelect(product);

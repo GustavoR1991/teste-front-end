@@ -6,7 +6,7 @@
   padding-bottom: 40px;
   font-family: "Poppins", sans-serif;
 
-  &__titulo {
+  &__title {
     display: flex;
     align-items: center;
     gap: 32px;
@@ -31,7 +31,7 @@
     }
   }
 
-  &__abas {
+  &__tabs {
     display: flex;
     height: 40px;
     margin-top: 4px;
@@ -50,7 +50,7 @@
     }
   }
 
-  &__aba {
+  &__tab {
     width: 100%;
     height: 100%;
     border: 1px solid var(--gray-300);
@@ -61,7 +61,7 @@
     color: var(--black);
     cursor: pointer;
 
-    &--ativa {
+    &--active {
       font-weight: 700;
       color: var(--blue-500);
     }
@@ -73,19 +73,19 @@
     }
   }
 
-  &__ver-todos {
+  &__see-all {
     display: block;
     text-align: center;
     font-size: 12px;
     color: var(--black);
   }
 
-  &__carrossel {
+  &__carousel {
     position: relative;
     margin-top: 24px;
   }
 
-  &__lista {
+  &__list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 304px));
     justify-content: space-between;
@@ -103,7 +103,7 @@
     }
   }
 
-  &__seta {
+  &__arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -116,20 +116,20 @@
     font-size: 20px;
     cursor: pointer;
 
-    &--esquerda {
+    &--left {
       left: -42px;
     }
-    &--direita {
+    &--right {
       right: -42px;
     }
 
     @include tablet {
       z-index: 1;
 
-      &--esquerda {
+      &--left {
         left: -12px;
       }
-      &--direita {
+      &--right {
         right: -12px;
       }
     }

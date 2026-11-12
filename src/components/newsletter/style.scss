@@ -17,7 +17,7 @@
     gap: 24px;
   }
 
-  &__texto {
+  &__text {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -29,7 +29,7 @@
     }
   }
 
-  &__titulo {
+  &__title {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 32px;
@@ -40,7 +40,7 @@
     }
   }
 
-  &__descricao {
+  &__description {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 14px;
@@ -59,7 +59,7 @@
     }
   }
 
-  &__campos {
+  &__fields {
     display: flex;
     gap: 8px;
 
@@ -112,7 +112,7 @@
     }
   }
 
-  &__termos {
+  &__terms {
     display: flex;
     align-items: center;
     gap: 8px;

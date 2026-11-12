@@ -5,7 +5,7 @@
   padding-top: 35px; 
   padding-bottom: 24px; 
 
-  &__lista {
+  &__list {
     display: flex;
     gap: clamp(16px, calc((100% - 896px) / 6), 42px);
     padding: 4px 4px 16px; 
@@ -65,17 +65,17 @@
       font-size: 12px;
     }
 
-    &--ativo {
+    &--active {
       color: var(--purple-700);
       font-weight: 600;
 
-      .categories__icone {
+      .categories__icon {
         background: var(--white); 
       }
     }
   }
 
-  &__icone {
+  &__icon {
     display: flex;
     align-items: center;
     justify-content: center;

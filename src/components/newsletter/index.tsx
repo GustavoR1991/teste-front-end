@@ -2,21 +2,21 @@ import "./style.scss";
 
 export function Newsletter() {
   return (
-    <section className="newsletter" aria-labelledby="newsletter-titulo">
-      <div className="newsletter__texto">
-        <h2 id="newsletter-titulo" className="newsletter__titulo">
+    <section className="newsletter" aria-labelledby="newsletter-title">
+      <div className="newsletter__text">
+        <h2 id="newsletter-title" className="newsletter__title">
           Inscreva-se na nossa newsletter
         </h2>
-        <p className="newsletter__descricao">
+        <p className="newsletter__description">
           Assine a nossa newsletter e receba as novidades e conteúdos exclusivos
           da Econverse.
         </p>
       </div>
 
       <form className="newsletter__form" onSubmit={(e) => e.preventDefault()}>
-        <div className="newsletter__campos">
+        <div className="newsletter__fields">
           <input
-            id="nome"
+            id="name"
             className="newsletter__input"
             type="text"
             placeholder="Digite seu nome"
@@ -36,7 +36,7 @@ export function Newsletter() {
           </button>
         </div>
 
-        <label className="newsletter__termos">
+        <label className="newsletter__terms">
           <input type="checkbox" required />
           Aceito os termos e condições
         </label>

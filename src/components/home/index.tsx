@@ -11,19 +11,19 @@ import { ProductModal } from "../product-modal";
 export function Home() {
   const { products, loading, error } = useProducts();
   const [selected, setSelected] = useState<Product | null>(null);
-  const temProdutos = !loading && !error;
+  const hasProducts = !loading && !error;
   return (
     <main className="home">
       <section className="banner">
-        <div className="banner__conteudo">
-          <h1 className="banner__titulo">
+        <div className="banner__content">
+          <h1 className="banner__title">
             Venha conhecer nossas
             <br /> promoções
           </h1>
-          <p className="banner__subtitulo">
+          <p className="banner__subtitle">
             <strong>50% Off</strong> nos produtos
           </p>
-          <a href="#vitrine" className="banner__button">
+          <a href="#showcase" className="banner__button">
             Ver produto
           </a>
         </div>
@@ -41,30 +41,30 @@ export function Home() {
         </p>
       )}
 
-      {temProdutos && (
+      {hasProducts && (
         <ProductShelf
-          id="vitrine"
-          titulo="Produtos relacionados"
+          id="showcase"
+          title="Produtos relacionados"
           products={products}
           onSelect={setSelected}
-          mostrarAbas
+          showTabs
         />
       )}
       <Partners />
-      {temProdutos && (
+      {hasProducts && (
         <ProductShelf
-          id="vitrine"
-          titulo="Produtos relacionados"
+          id="showcase"
+          title="Produtos relacionados"
           products={products}
           onSelect={setSelected}
         />
       )}
       <Partners />
       <Brands />
-      {temProdutos && (
+      {hasProducts && (
         <ProductShelf
-          id="vitrine"
-          titulo="Produtos relacionados"
+          id="showcase"
+          title="Produtos relacionados"
           products={products}
           onSelect={setSelected}
         />

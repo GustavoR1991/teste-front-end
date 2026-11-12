@@ -13,15 +13,15 @@ export function Footer() {
     <>
       <Newsletter />
       <footer className="footer">
-        <section className="footer__marca" aria-label="Sobre a Econverse">
+        <section className="footer__brand" aria-label="Sobre a Econverse">
           <img className="footer__logo" src={logo} alt="Econverse" />
 
-          <p className="footer__descricao">
+          <p className="footer__description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
 
           <nav aria-label="Redes sociais">
-            <ul className="footer__redes">
+            <ul className="footer__social">
               <li>
                 <a href="#" aria-label="Instagram">
                   <img src={instagram} alt="" />
@@ -42,8 +42,8 @@ export function Footer() {
         </section>
 
         <nav className="footer__links" aria-label="Links do rodapé">
-          <div className="footer__coluna">
-            <h2 className="footer__titulo">Institucional</h2>
+          <div className="footer__column">
+            <h2 className="footer__title">Institucional</h2>
             <ul>
               <li>
                 <a href="#">Sobre Nós</a>
@@ -56,8 +56,8 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="footer__coluna">
-            <h2 className="footer__titulo">Atendimento</h2>
+          <div className="footer__column">
+            <h2 className="footer__title">Atendimento</h2>
             <ul>
               <li>
                 <a href="#">Contato</a>
@@ -71,8 +71,8 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="footer__coluna">
-            <h2 className="footer__titulo">Termos</h2>
+          <div className="footer__column">
+            <h2 className="footer__title">Termos</h2>
             <ul>
               <li>
                 <a href="#">Termos e Condições</a>
